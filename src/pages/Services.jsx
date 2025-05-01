@@ -14,40 +14,41 @@ const services = [
   {
     icon: <CodeOutlined />,
     title: 'Web Development',
-    desc: 'Modern websites using React.js, HTML, CSS, and more.',
+    desc: 'Responsive and SEO-friendly websites built with React.js, HTML5, and CSS3 for modern user experiences.',
     aos: 'fade-up',
   },
   {
     icon: <MobileOutlined />,
     title: 'Mobile App UI',
-    desc: 'Beautiful and responsive mobile-first user interfaces.',
+    desc: 'Custom-designed mobile-first UIs that ensure performance and aesthetics across Android and iOS platforms.',
     aos: 'fade-up',
   },
   {
     icon: <CloudServerOutlined />,
     title: 'Cloud Hosting',
-    desc: 'Deploy and scale your apps on modern cloud services.',
+    desc: 'Efficient and scalable cloud deployment solutions using AWS, Firebase, and other cloud platforms.',
     aos: 'fade-up',
   },
   {
     icon: <DatabaseOutlined />,
     title: 'Database Design',
-    desc: 'Secure and optimized database structures.',
+    desc: 'Well-structured, secure databases using MySQL, MongoDB, and PostgreSQL for seamless data management.',
     aos: 'fade-up',
   },
   {
     icon: <SettingOutlined />,
     title: 'Backend APIs',
-    desc: 'Powerful APIs built with Spring Boot & Node.js.',
+    desc: 'Robust, secure APIs built with Spring Boot and Node.js to power your applications with speed and reliability.',
     aos: 'fade-up',
   },
   {
     icon: <DeploymentUnitOutlined />,
     title: 'Full-Stack Projects',
-    desc: 'End-to-end development with frontend + backend.',
+    desc: 'Complete frontend-to-backend development — from concept to deployment — using the latest tech stack.',
     aos: 'fade-up',
   },
 ];
+
 
 const Services = () => {
   return (
@@ -57,7 +58,9 @@ const Services = () => {
 
       <div className="section-heading" data-aos="fade-down">
         <h1><span>Our</span> Services</h1>
-        <p>We deliver a wide range of web solutions for all your business needs.</p>
+        <p>
+  From frontend design to backend architecture, we deliver tailored solutions that drive your business forward.
+</p>
       </div>
 
       <Row gutter={[24, 24]}>

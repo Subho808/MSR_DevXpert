@@ -1,3 +1,4 @@
+import { Button } from 'antd';
 import React from 'react';
 // import './Career.css';
 
@@ -21,21 +22,21 @@ const Career = () => {
                         <h3>Frontend Developer</h3>
                         <p><strong>Experience:</strong> 1-3 years</p>
                         <p><strong>Skills:</strong> React.js, HTML, CSS, JavaScript</p>
-                        <button>Apply Now</button>
+                        <Button type='primary' size="large" href='/apply'>Apply Now</Button>
                     </div>
 
                     <div className="career-card">
                         <h3>Backend Developer</h3>
                         <p><strong>Experience:</strong> 2+ years</p>
                         <p><strong>Skills:</strong> Java, Spring Boot, REST APIs</p>
-                        <button>Apply Now</button>
+                        <Button type='primary' size="large">Apply Now</Button>
                     </div>
 
                     <div className="career-card">
                         <h3>UI/UX Designer</h3>
                         <p><strong>Experience:</strong> 1+ year</p>
                         <p><strong>Skills:</strong> Figma, Adobe XD, Wireframing</p>
-                        <button>Apply Now</button>
+                        <Button type='primary' size="large">Apply Now</Button>
                     </div>
                 </div>
 

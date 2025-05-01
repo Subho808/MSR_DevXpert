@@ -1,3 +1,4 @@
+import { Button } from 'antd';
 import React from 'react';
 // import './Contact.css'; // Ensure correct path
 
@@ -14,7 +15,7 @@ const Contact = () => {
                     <input type="text" placeholder="Your Name" required />
                     <input type="email" placeholder="Your Email" required />
                     <textarea placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit">Send Message</button>
+                    <Button type="submit" size="large">Send Message</Button>
                 </form>
             </div>
         </section>

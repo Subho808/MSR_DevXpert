@@ -6,20 +6,19 @@ import "../styles/css/main.css";
 
 const projects = [
   {
-    title: "E-Commerce Website",
-    description: "A full-stack e-commerce platform with product management, cart, and payment integration.",
-    image: "https://source.unsplash.com/featured/?ecommerce,website"
+    title: "Vision Green RKR",
+    description:
+      "A clean, modern website for Vision Green RKR, showcasing their eco-friendly waste management solutions and community initiatives.",
+    image: require("../styles/images/RKR.png"), // Corrected path for local image
+    link: "https://visiongreenrkr.com/",
   },
   {
-    title: "HR Management System",
-    description: "Streamlined HR workflows including recruitment, payroll, and employee management.",
-    image: "https://source.unsplash.com/featured/?humanresources,technology"
+    title: "Oxynet Telecommunications Pvt. Ltd.",
+    description:
+      "A professional broadband service website with dynamic service plans, contact integration, and customer-first UI/UX.",
+    image: require("../styles/images/oxyHome.png"), // Replace with the correct local image file name
+    link: "https://oxynet.co.in/",
   },
-  {
-    title: "Portfolio Website",
-    description: "A modern personal portfolio built with React and animated with GSAP.",
-    image: "https://source.unsplash.com/featured/?portfolio,webdesign"
-  }
 ];
 
 const Projects = () => {
@@ -31,32 +30,38 @@ const Projects = () => {
   return (
     <section className="projects-section">
       {/* Unique Background Blob */}
-     {/* Background Blob */}
-     <div className="about-blob-bg"></div>
-
+      {/* Background Blob */}
+      <div className="about-blob-bg"></div>
 
       <div className="container" data-aos="fade-up">
         {/* <h1 className="section-heading">Our Projects</h1> */}
-        <h1><span>Our</span> Projects</h1>
-        <p className="section-subtitle ">
-          Showcasing our creativity, technical expertise, and commitment to excellence.
+        <h1>
+          <span>Our</span> Projects
+        </h1>
+        <p className="section-subtitle">
+          Explore the impactful digital solutions we've crafted for our valued
+          clients.
         </p>
 
-        <Row gutter={[24, 24]}>
+        <Row className="card" gutter={[24, 24]}>
           {projects.map((project, index) => (
             <Col xs={24} sm={12} md={8} key={index} data-aos="zoom-in">
-              <Card
-                hoverable
-                className="project-card"
-                cover={<img alt={project.title} src={project.image} />}
-              >
-                <Card.Meta title={project.title} description={project.description} />
-              </Card>
-            </Col>
+  <a href={project.link} target="_blank" rel="noopener noreferrer">
+    <div className="custom-project-card">
+      <img src={project.image} alt={project.title} className="project-img-top" />
+      <Card hoverable className="project-card">
+        <Card.Meta
+          title={project.title}
+          description={project.description}
+        />
+      </Card>
+    </div>
+  </a>
+</Col>
+
           ))}
         </Row>
       </div>
-     
     </section>
   );
 };

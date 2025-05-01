@@ -1,7 +1,9 @@
-import React from 'react';
-import { Row, Col, Card } from 'antd';
-import { RocketOutlined, EyeOutlined, StarOutlined } from '@ant-design/icons';
-import '../styles/css/main.css';
+import React from "react";
+import { Row, Col, Card } from "antd";
+import { RocketOutlined, EyeOutlined, StarOutlined } from "@ant-design/icons";
+import "../styles/css/main.css";
+import HandshakeOutlinedIcon from "@mui/icons-material/HandshakeOutlined";
+import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 
 const About = () => {
   return (
@@ -11,10 +13,13 @@ const About = () => {
 
       {/* Heading */}
       <div className="about-header" data-aos="fade-down">
-        <h1><span>About</span> MSR devXpert</h1>
-        <p className='section-subtitle'>
-          We are a dynamic full-stack web development company delivering impactful digital solutions
-          using modern technologies like React & Spring Boot.
+        <h1>
+          <span>About</span> MSR devXpert
+        </h1>
+        <p className="section-subtitle">
+          MSR DevXpert is your trusted partner for building powerful, scalable,
+          and modern digital solutions. From startups to enterprises, we empower
+          growth through full-stack web development.
         </p>
       </div>
 
@@ -25,8 +30,8 @@ const About = () => {
             <RocketOutlined className="about-icon" />
             <h3>Our Mission</h3>
             <p>
-              Empower businesses with innovative, fast, and scalable web solutions that
-              drive digital transformation.
+              Empower businesses with innovative, fast, and scalable web
+              solutions that drive digital transformation.
             </p>
           </Card>
         </Col>
@@ -35,8 +40,42 @@ const About = () => {
             <EyeOutlined className="about-icon" />
             <h3>Our Vision</h3>
             <p>
-              To be the leading tech partner for global enterprises through excellence and
-              customer-first strategies.
+              To be the leading tech partner for global enterprises through
+              excellence and customer-first strategies.
+            </p>
+          </Card>
+        </Col>
+      </Row>
+
+      {/* Mission & Vision Cards */}
+      <Row gutter={[24, 24]} className="about-section">
+        <Col xs={24} md={12} data-aos="fade-right">
+          <Card className="about-card glass">
+            <WorkOutlineIcon
+              className="about-icon"
+              style={{ fontSize: "5vh" }}
+            />
+            <h2>How We Work</h2>
+            <p>
+              At MSR DevXpert, we combine <strong>agile methodologies</strong>{" "}
+              with deep technical skills to deliver on time, every time. We
+              collaborate closely with our clients to understand their goals,
+              solve real problems, and deliver measurable value.
+            </p>
+          </Card>
+        </Col>
+        <Col xs={24} md={12} data-aos="fade-left">
+          <Card className="about-card glass">
+            <HandshakeOutlinedIcon
+              className="about-icon"
+              style={{ fontSize: "5vh" }}
+            />
+            <h2>Our Promise</h2>
+            <p>
+              We are more than just developers — we are your technology
+              partners. With a commitment to quality, transparency, and
+              innovation, we help our clients achieve sustainable growth in the
+              digital era.
             </p>
           </Card>
         </Col>
@@ -44,12 +83,14 @@ const About = () => {
 
       {/* Why Choose Us */}
       <div className="why-choose" data-aos="fade-up">
-        <h2><StarOutlined /> Why Choose Us</h2>
+        <h2>
+          <StarOutlined /> Why Choose Us
+        </h2>
         <ul>
-          <li>🚀 Expert React & Spring Boot team</li>
-          <li>🤝 Personalized & scalable solutions</li>
-          <li>⏱️ Fast turnaround & support</li>
-          <li>💡 Innovative, creative, and reliable</li>
+          <li>🚀 Skilled team in React, Spring Boot & full-stack web tech</li>
+          <li>🤝 Customized solutions tailored to your business needs</li>
+          <li>⏱️ Fast delivery with ongoing support & maintenance</li>
+          <li>💡 Focused on creativity, scalability, and real-world results</li>
         </ul>
       </div>
     </div>

@@ -6,13 +6,20 @@ import {
   EnvironmentOutlined,
 } from "@ant-design/icons";
 import "./../styles/css/main.css";
-
+import logo from "../styles/images/MSR_logo-removebg-preview1.png"
 const Footer = () => {
   return (
     <div className="footer-container">
       <Row gutter={[32, 16]} justify="space-between">
         <Col xs={24} md={8}>
-          <h2 className="footer-logo">msr <span>devXpert</span></h2>
+        <div className="footer-logo" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <img
+              src={logo} // 🔁 Update this path as needed
+              alt="MSR DevXpert Logo"
+              style={{ height: "60px", width: "auto" }}
+            />
+            
+          </div>
           <p className="footer-tagline">Building smarter digital experiences.</p>
         </Col>
 

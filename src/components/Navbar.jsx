@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Drawer, Button, Menu } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
-
+import logo from "../styles/images/MSR_logo-removebg-preview.png"
 const Navbar = () => {
     const [visible, setVisible] = useState(false);
 
@@ -10,10 +10,18 @@ const Navbar = () => {
     const onClose = () => setVisible(false);
 
     return (
-        <header className="navbar-container" data-aos="fade-down">
+        <header className="navbar-container" data-aos="fade-down" data-aos-once="true">
             <div className="navbar-logo">
-                <Link to="/"><span>MSR</span> devXpert</Link>
-            </div>
+    <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <img
+            src={logo} // <-- Replace with actual image path
+            alt="MSR DevXpert Logo"
+            style={{ height: '150px', width: 'auto' }} // adjust size as needed
+        />
+        {/* <span><strong>MSR</strong> devXpert</span> */}
+    </Link>
+</div>
+
 
             {/* Desktop Menu */}
             <nav className="navbar-menu-desktop">

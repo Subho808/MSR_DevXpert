@@ -18,7 +18,7 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1000 !important;
 }
 
 .navbar-logo a {
@@ -163,16 +163,43 @@ body {
 
 
 .hero-modern {
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding: 80px 40px;
     background: linear-gradient(to right, #e6fffa, #f0f4f8);
+    background-image: "../";
     border-radius: 20px;
     margin: 40px auto;
     min-height: 80vh;
 }
+
+/* for bg image */
+.hero-modern {
+    position: relative;
+    background-color: #f7f9fc; /* Optional light bg for contrast */
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .hero-modern::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    /* background-image: url('../images/bglogo.jpg'); Replace with your logo path */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%; /* Adjust size to fit nicely */
+    opacity: 0.08; /* Controls how visible the logo is */
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+  
+/* for bg image */
 
 .animated-heading {
     font-size: 44px;
@@ -207,8 +234,124 @@ body {
     background-color: #00a58f !important;
     border-color: #00a58f !important;
 }
+.ant-btn-submit {
+    background-color: #ff9940 !important;
+    border-color: #8aefe2 !important;
+    color: #fff !important;
+}
 
+.ant-btn-submit:hover {
+    background-color: #00a58f !important;
+    border-color: #00a58f !important;
+}
 
+/* tagcloud */
+
+.hero-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+  }
+  
+  .hero-content {
+    flex: 1;
+    min-width: 300px;
+    z-index: 1;
+  }
+  
+  .hero-skill-cloud {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .tagcloud {
+      font-family: 'Lato', sans-serif;
+      font-size: 1em;
+      color: #00ffff;
+  
+      .tagcloud--item:hover {
+        color: #ff4081;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .hero-row {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .hero-content {
+      padding-right: 0;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+    }
+  
+    .hero-cloud {
+      justify-content: center;
+    }
+  
+    .hero-skill-cloud {
+      justify-content: center;
+    }
+  
+    .tagcloud {
+      max-width: 100%;
+      margin-right: 0 !important;
+    }
+  }
+  
+  
+  .skill__cloud {
+    .tagcloud--item {
+      transition: color 0.3s ease;
+      &:hover {
+        color: #ffffff !important;
+      }
+    }
+  }
+
+  
+  .hero-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .hero-content {
+    flex: 1;
+    padding-right: 2rem;
+    min-width: 300px;
+  }
+  
+  .hero-cloud {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 300px;
+    height: 360px; /* or as needed */
+  }
+  
+  .tagcloud {
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    font-weight: 700;
+    margin-right: 15%;
+  }
+  
+  
 /* ========= SERVICES SECTION ========= */
 .section-title {
     text-align: center;
@@ -229,6 +372,7 @@ body {
 .service-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    
 }
 
 .service-icon {
@@ -416,6 +560,15 @@ body {
     margin-top: 40px;
 }
 
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.about-card:hover .about-icon {
+    color: #13c2c2;
+}
+
 .about-card {
     border-radius: 16px;
     padding: 24px;
@@ -511,11 +664,16 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(8px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
 }
 
 .service-card-glass:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.service-card-glass:hover .service-icon-glow {
+    color: #13c2c2;
 }
 
 .service-icon-glow {
@@ -678,7 +836,7 @@ body {
 .project-card {
     border-radius: 16px;
     text-align: center;
-    padding: 30px 20px;
+    /* padding: 30px 20px; */
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(8px);
@@ -688,6 +846,13 @@ body {
     /* or whatever height you prefer */
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+.card {
+    margin-left: -12px;
+    margin-right: -12px;
+    row-gap: 24px;
+    display: flex;
     justify-content: center;
 }
 
@@ -768,6 +933,53 @@ body {
     font-weight: bold;
     line-height: 2;
 }
+
+
+
+
+
+.custom-project-card {
+    position: relative;
+    text-align: center;
+    margin-top: 60px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .custom-project-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(255, 253, 253, 0);
+  }
+  
+  
+  .project-img-top {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+  }
+  
+  .project-card {
+    padding-top: 60px;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
 
 /* ========= END PROJECTS SECTION ========= */
 /* ========= Contact SECTION ========= */
@@ -865,9 +1077,9 @@ body {
     background-color: #ff9940;
     color: #fff;
     border: none;
-    padding: 14px 20px;
+    /* padding: 14px 20px; */
     border-radius: 8px;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -902,14 +1114,14 @@ body {
     /* font-weight: 700; */
 }
 
-.contact-container span {
+/* .contact-container span {
     color: #001529;
-}
+} */
 
 /* ========= Contact SECTION END ========= */
 /* ========= Team SECTION  ========= */
 .team-section {
-    padding: 80px 20px;
+    /* padding: 80px 20px; */
     background: #f9fbff;
     text-align: center;
 }
@@ -942,23 +1154,40 @@ body {
 
 .team-card {
     background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 420px; /* Increase height if needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
+
+.team-card img {
+    width: 120px;
+    height: 180px; /* Make it tall */
+    object-fit: cover;
+    border-radius: 8px; /* Use 8px or 12px for rounded rectangle */
+    margin-bottom: 16px;
+}
+
+
 
 .team-card:hover {
     transform: translateY(-5px);
 }
 
 .team-card img {
-    width: 100%;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    height: 200px;
+    width: 70%;
+    height: 100%;
+    border-radius: 0%;
     object-fit: cover;
+    margin-bottom: 16px;
 }
+
 
 .team-card h3 {
     font-size: 1.2rem;
@@ -1039,6 +1268,60 @@ body {
     text-decoration: none;
     font-weight: bold;
 }
+
+
+.blog-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.blog-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.blog-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.blog-content p {
+    flex-grow: 1;
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.blog-content a {
+    align-self: center;
+    color: #ff9940;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.blog-content a:hover {
+    color: #ed7002;
+}
+
 
 /* ========= Blog SECTION END ========= */
 /* ========= CAREER SECTION========= */
@@ -1133,3 +1416,39 @@ body {
 }
 
 /* ========= CARRER SECTION END ========= */
+/* ========= Apply now start========= */
+.apply-now-section {
+    background-color: #f9fbff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.apply-now-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #ed7002, #04396b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+.apply-form .ant-form-item {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* ========= Apply now END ========= */
